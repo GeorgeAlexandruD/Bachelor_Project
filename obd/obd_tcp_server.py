@@ -3,6 +3,7 @@ import os
 from MsgHandler import MsgHandler
 import collections
 import time
+from MsgAlarm import MsgAlarm
 
 import json
 
@@ -28,17 +29,18 @@ class Client(asyncore.dispatcher):
         except:
             pass
         self.reading(buff, self.unit_id, self.msgHandler, self.outbox)
-
+    #[]
     def reading(self, buff, unit_id, msgHandler,  outbox):
-        packets = msgHandler.lock_packet(buff)
+        packets = msgHandler.lock_packet(buff, )
         for (start, end) in packets:
             if start>=0 and end >0:
                 if unit_id is "unknown":
                     unit_id = msgHandler.get_unit_id(buff[start:end])
 
                 # todo: publish or not
- 
-                res = msgHandler.process(unit_id,buff[start:end])
+                msgType = msgHandler.get_event_type(buff[start:end])
+
+                res = msgHandler.process(unit_id,buff[start:end], msgType, MsgAlarm)
 
                 if res is not None:
                     outbox.append(res)
@@ -49,7 +51,7 @@ class Client(asyncore.dispatcher):
         message = self.writing(self.outbox, self.last_write)
         if message is not None:
             self.send(message)
-
+    #[]
     def writing(self, outbox, last_write):
         if not outbox or bool(time.time() - last_write < 1.0):
             time.sleep(0.2) 
@@ -73,10 +75,10 @@ class Host(asyncore.dispatcher):
         pair = self.accept()
         if pair is not None:
             socket, addr = pair
-            self.add_client(socket,addr, self, self.clients)
-
-    def add_client(self, socket, addr,host, clients):
-        clients.append(Client(host,socket,addr))
+            self.add_client(socket,addr, self, self.clients, Client)
+    
+    def add_client(self, socket, addr,host, clients, client):
+        clients.append(client(host,socket,addr))
 
 
 
@@ -86,8 +88,4 @@ if __name__ == '__main__':
         asyncore.loop()
     except:
         asyncore.close_all()
-    
-
-
-
     

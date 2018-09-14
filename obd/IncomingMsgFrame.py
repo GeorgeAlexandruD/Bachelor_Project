@@ -1,5 +1,6 @@
-from TypesParser import TypesParser as type_parser
-from MessageValidator import MessageValidator as mv
+from TypesParser import TypesParser
+from MessageValidator import MessageValidator
+
 
 class IncomingMsgFrame:
     def __init__(self, message):
@@ -10,13 +11,11 @@ class IncomingMsgFrame:
         self.event_data=""
         self.event_response_code= 0x0000
 
-        self.error_code = self.preload()
-       
-
+        self.error_code = self.preload(TypesParser, MessageValidator, IncomingMsgFrame.get_event_code)
 
 
     @staticmethod
-    def lock_packet(buff):
+    def lock_packet(buff, typeParser):
         buff = bytes(buff)
         offset = 0
         packets = list()
@@ -25,7 +24,7 @@ class IncomingMsgFrame:
             start = buff.find('\x40\x40', offset)  # Identify start of packet
             if start == -1:
                 return packets
-            pack_l = type_parser.parse_u16(buff[start + 2: start + 4])
+            pack_l = typeParser.parse_u16(buff[start + 2: start + 4])
 
             if pack_l > len(buff):
                 return packets
@@ -44,33 +43,31 @@ class IncomingMsgFrame:
         return str(buff[4: 16])
 
     @staticmethod
-    def get_event_type(buff):
-        return type_parser.parse_u16(buff[16:18])
+    def get_event_type(buff, typeParser):
+        return typeParser.parse_u16(buff[16:18])
     
     @staticmethod
-    def get_event_code(buff):
-        return type_parser.parse_u16(buff[16:18])
+    def get_event_code(buff, typeParser):
+        return typeParser.parse_u16(buff[16:18])
     
 
-    def preload(self):
+    def preload(self, typeParser, mv, get_event_code):
         
-        package_length = type_parser.parse_u16(self.msg[2: 4])
+        package_length = typeParser.parse_u16(self.msg[2: 4])
 
-        crc_sum = type_parser.parse_u16(self.msg[package_length - 4: package_length - 2])
+        crc_sum = typeParser.parse_u16(self.msg[package_length - 4: package_length - 2])
  
-        if mv.msg_crc_is_good(self.msg[0: package_length - 4], crc_sum):
-            print(1)
+        if mv.msg_crc_is_good(self.msg[0: package_length - 4], crc_sum, mv.crc_calculate):
+        
             if mv.msg_head_is_good(self.msg[0: 2]):
-                print(2)
+            
                 if mv.msg_len_is_good(len(self.msg), package_length):
-                    print(3)
-                    
+
                     self.unit_id = self.msg[4: 16]
-                    self.event_code = IncomingMsgFrame.get_event_code(self.msg)
+                    self.event_code = get_event_code(self.msg, typeParser)
                     self.event_data= self.msg[18: package_length - 4]
 
                     if not mv.msg_tail_is_good(self.msg[package_length-2: package_length]):
-                        print(4)
                         return 1
                 else:
                     return 2

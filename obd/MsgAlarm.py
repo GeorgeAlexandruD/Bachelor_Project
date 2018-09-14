@@ -1,6 +1,7 @@
 from IncomingMsgFrame import IncomingMsgFrame
-from TypesParser import TypesParser as type_parser
+from TypesParser import TypesParser
 import datetime
+from MessageValidator import MessageValidator
 
 class MsgAlarm(IncomingMsgFrame):
     def __init__(self, buff):
@@ -9,32 +10,32 @@ class MsgAlarm(IncomingMsgFrame):
         self.response_code= 0xA003
         if self.error_code == 0:
             try:
-                self.load()
+                self.load(TypesParser)
             except:
                 self.error_code = 1000 + self.cur
 
-    def load(self):
+    def load(self, typeParser):
         self.cur = 0
         
-        self.received_rand_id = type_parser.parse_u16(self.event_data[self.cur: self.cur +2])
+        self.received_rand_id = typeParser.parse_u16(self.event_data[self.cur: self.cur +2])
         self.cur += 2
 
-        self.alarm_tag = "new" if type_parser.parse_u8(self.event_data[self.cur: self.cur+1]) else "end"
+        self.alarm_tag = "new" if typeParser.parse_u8(self.event_data[self.cur: self.cur+1]) else "end"
         self.cur += 1
 
-        self.alarm_no = type_parser.parse_u8(self.event_data[self.cur: self.cur+1]) 
+        self.alarm_no = typeParser.parse_u8(self.event_data[self.cur: self.cur+1]) 
         self.cur += 1
 
-        self.alarm_threshold = type_parser.parse_u16(self.event_data[self.cur: self.cur+2])
+        self.alarm_threshold = typeParser.parse_u16(self.event_data[self.cur: self.cur+2])
         self.cur += 2
 
-        self.alarm_value = type_parser.parse_u16(self.event_data[self.cur:self.cur+2])
+        self.alarm_value = typeParser.parse_u16(self.event_data[self.cur:self.cur+2])
         self.cur +=2
 
-        self.event_timestamp = type_parser.parse_utc_time(self.event_data[self.cur: self.cur+6])
+        self.event_timestamp = typeParser.parse_utc_time(self.event_data[self.cur: self.cur+6],typeParser)
         self.cur += 6
         
-        self.alarm_location = type_parser.parse_gps_info(self.event_data[self.cur: self.cur+21])
+        self.alarm_location = typeParser.parse_gps_info(self.event_data[self.cur: self.cur+21], typeParser)
 
     def to_dict(self):
         res = dict()
@@ -48,9 +49,9 @@ class MsgAlarm(IncomingMsgFrame):
 
         return res
 
-    def generate_response(self):
+    def generate_response(self, typeParser):
         res = bytearray()
 
-        res += type_parser.pack_u16(self.received_rand_id)
+        res += typeParser.pack_u16(self.received_rand_id)
 
-        return type_parser.pack(self.unit_id,self.response_code, res)
+        return typeParser.pack(self.unit_id,self.response_code,TypesParser, MessageValidator ,res)

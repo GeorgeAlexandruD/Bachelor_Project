@@ -18,7 +18,10 @@ class TestStringMethods(unittest.TestCase):
         fake_client= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         fake_client.connect((TCP_IP,TCP_PORT))
         
-
+class TestObdtcp(unittest.TestCase):
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
+        
 
 if __name__ == '__main__':
     unittest.main()

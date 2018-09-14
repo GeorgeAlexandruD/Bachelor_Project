@@ -2,8 +2,8 @@ class MessageValidator:
     
     
     @staticmethod
-    def msg_crc_is_good(msg, crc):
-        if crc == MessageValidator.crc_calculate(msg):
+    def msg_crc_is_good(msg, crc, crc_calculate):
+        if crc == crc_calculate(msg):
             return True
         else:
             return False
