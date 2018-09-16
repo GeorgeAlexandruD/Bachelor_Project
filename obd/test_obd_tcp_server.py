@@ -19,9 +19,11 @@ class TestStringMethods(unittest.TestCase):
         fake_client.connect((TCP_IP,TCP_PORT))
         
 class TestObdtcp(unittest.TestCase):
-    def test_upper(self):
+    def test_reading_output(self):
         self.assertEqual('foo'.upper(), 'FOO')
-        
+    def test_reading_output(self):
+        self.assertEqual('foo'.upper(), 'FOO')
+    
 
 if __name__ == '__main__':
     unittest.main()

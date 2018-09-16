@@ -1,0 +1,162 @@
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\roslyn\csc.exe
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\roslyn\System.Collections.Immutable.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\roslyn\System.Reflection.Metadata.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\roslyn\vbc.exe
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\roslyn\VBCSCompiler.exe
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\roslyn\VBCSCompiler.exe.config
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\MVCSolution.dll.config
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\MVCSolution.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\MVCSolution.pdb
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Antlr3.Runtime.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\EntityFramework.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\EntityFramework.SqlServer.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.AspNet.Identity.Core.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.Cookies.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.Facebook.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.Google.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.OAuth.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.Twitter.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Web.Infrastructure.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Newtonsoft.Json.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Owin.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.Helpers.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.Mvc.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.Optimization.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.Razor.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.WebPages.Deployment.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.WebPages.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.WebPages.Razor.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\WebGrease.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.Helpers.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.Mvc.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.Optimization.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.Razor.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.WebPages.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.WebPages.Deployment.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\System.Web.WebPages.Razor.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Antlr3.Runtime.pdb
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Newtonsoft.Json.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\EntityFramework.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\EntityFramework.SqlServer.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.AspNet.Identity.Core.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.Facebook.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.Cookies.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.OAuth.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.Google.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.Twitter.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\obj\Debug\MVCSolution.csprojResolveAssemblyReference.cache
+D:\topup\learning\SI\WebApplication1\MVCSolution\obj\Debug\MVCSolution.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\obj\Debug\MVCSolution.pdb
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\EasyNetQ.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\RabbitMQ.Client.dll
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\bin\RabbitMQ.Client.xml
+D:\topup\learning\SI\WebApplication1\MVCSolution\obj\Debug\MVCSolution.Migrations.InitialCreate.resources
+D:\topup\learning\SI\WebApplication1\MVCSolution\obj\Debug\MVCSolution.csproj.GenerateResource.Cache
+D:\topup\learning\SI\WebApplication1\MVCSolution\obj\Debug\MVCSolution.Migrations.obd.resources
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\roslyn\csc.exe
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\roslyn\vbc.exe
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\roslyn\VBCSCompiler.exe
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\MVCSolution.dll.config
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\MVCSolution.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\MVCSolution.pdb
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Antlr3.Runtime.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\EasyNetQ.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\EntityFramework.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\EntityFramework.SqlServer.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Newtonsoft.Json.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Owin.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\RabbitMQ.Client.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.Helpers.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.Mvc.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.Optimization.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.Razor.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.WebPages.Deployment.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.WebPages.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.WebPages.Razor.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\WebGrease.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Newtonsoft.Json.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\RabbitMQ.Client.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.Helpers.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.Mvc.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.Optimization.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.Razor.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.WebPages.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.WebPages.Deployment.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\System.Web.WebPages.Razor.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Antlr3.Runtime.pdb
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\EntityFramework.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\EntityFramework.SqlServer.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\obj\Debug\MVCSolution.csprojResolveAssemblyReference.cache
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\obj\Debug\MVCSolution.Migrations.InitialCreate.resources
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\obj\Debug\MVCSolution.Migrations.obd.resources
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\obj\Debug\MVCSolution.csproj.GenerateResource.Cache
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\obj\Debug\MVCSolution.dll
+C:\Users\George\Desktop\bachelor thesis\code\API\MVCSolution\obj\Debug\MVCSolution.pdb
