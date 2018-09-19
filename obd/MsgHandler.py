@@ -13,7 +13,7 @@ class MsgHandler:
         self.rb_mq = RabbitMQBinding()
     #function calls another function
     def lock_packet(self,buff):
-        return self.IncomingMsgFrame.lock_packet(buff)
+        return self.IncomingMsgFrame.lock_packet(buff, TypesParser)
     #function calls another function
     def publish(self, unit_id, data):
         self.rb_mq.publish(unit_id + '.' + data['packet_type'], json.dumps(data))
@@ -22,7 +22,7 @@ class MsgHandler:
         return self.IncomingMsgFrame.get_unit_id(buff)
     #function calls another function
     def get_event_type(self,buff):
-        return self.IncomingMsgFrame.get_event_type(buff)
+        return self.IncomingMsgFrame.get_event_type(buff, TypesParser)
 
     def process(self,unit_id, buff, msgType, msgAlarm):
         message_type = msgType
