@@ -1,9 +1,12 @@
+import TypesParser as tp
+
 class MessageValidator:
     
     
     @staticmethod
     def msg_crc_is_good(msg, crc, crc_calculate):
         if crc == crc_calculate(msg):
+           # print(crc_calculate(bytearray.fromhex("404039003247512d313630313030383803201000010c000000000703110f1b390703110f1b030c549e3d0c2aec20020000000000008DFC")))
             return True
         else:
             return False

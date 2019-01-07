@@ -1,7 +1,9 @@
 import socket
 import os
 import time
-demo_msg = bytearray.fromhex("404039003247512d313630313030383803201000010f0000002d0703110f1b390703110f1b030c549e3d0c2aec200200000000000034080d0a");
+import MessageValidator 
+poweron = bytearray.fromhex("404039003247512d313630313030383803201000010d000000000703110f1b390703110f1b030c549e3d0c2aec20020000000000008d430d0a")
+poweroff = bytearray.fromhex("404039003247512d313630313030383803201000010c000000000703110f1b390703110f1b030c549e3d0c2aec2002000000000000fc8d0d0a")
 # demo_msg = bytearray.fromhex("40404b003247512d313630313030313901101e0b100604190c02c83707f887ac0f000000002d130101030304020000010100000d426162636465666768696a6ba51e0b1006041965c30d0a")
 # demo_msg = bytearray.fromhex("404069003247512d313630313030383801200603110b03068080800603110b03060f349d3d0c10eb200202000000a4ff000000000000000000000000001e0000000200ff0001000300fd0000000200fe0000000100fc0000000200fe007500ffff010100008da50d0a0d0a")
 # demo_msg = bytearray.fromhex("404049003247512d313630313030383802200403111107148080000403111106070c982c3e0c42721f02000000000000000000000000000000000000007700ffff01010000d7350d0a")
@@ -15,8 +17,10 @@ demo_msg = bytearray.fromhex("404039003247512d313630313030383803201000010f000000
 # demo_msg = ("404023003247512d313630313030383809c0126800010280df0803110b3b087f020d0a")
 
 # New packets
-# demo_msg = bytearray.fromhex("404039003247512d313630313030383803201000010f0000002d0703110f1b390703110f1b030c549e3d0c2aec200200000000000034080d0a")1e0b10060419 190406100b1e
-# demo_msg = bytearray.fromhex("40403e003247512d313630313030313901101e0b100604190c01c83707f887ac0f00000000132d010103030402000001010000001e0b10060419206b0d0a")
+# demo_msg = bytearray.fromhex("4040 3900 3247512d31363031303038380 3201 000010f0000002d0703110f1b390703110f1b030c549e3d0c2aec200200000000000 0340 80d0a")1e0b10060419 190406100b1e
+# demo_msg = bytearray.fromhex("4040 3e00 3247512d31363031303031390 1101 e0b100604190c01c83707f887ac0f00000000132d010103030402000001010000001e0b10060419206b0d0a")
+mb = MessageValidator
+
 
 TCP_IP = str(os.getenv('VCAP_APP_HOST', '127.0.0.1')) # 169.44.113.174 new 169.44.124.123
 TCP_PORT = int(os.getenv('VCAP_APP_PORT2', '3333'))
@@ -30,44 +34,13 @@ server_address = (TCP_IP, TCP_PORT)
 s.connect(server_address)
 
 #Infinite loop to keep client running.
-print 'send:  ' + concat(demo_msg)
-s.send(demo_msg)
+print 'send:  ' + concat(poweron)
+s.send(poweron)
 
 while True:
     res = s.recv(1024)
     print 'recv:  ' + concat(res)
  
 s.close()
-
-
-
-
-
-# db.parkinglot.insert({"price": 50,
-#                      "name": "Friis parking lot",
-    
-#     "coordinates":
-#                       {"type":"Polygon",
-#                          coordinates:
-#                           [[[57.048422, 9.926281],
-#                           [57.047891, 9.927762],
-#                           [57.047442, 9.927193] , 
-#                           [57.047643, 9.925793],
-#                           [57.048422, 9.926281] ]] 
-#                         }
-
-#                     })
-
-# db.parkinglot.find({coordinates:
-#                  {$geoIntersects:
-#                      {$geometry:{ "type" : "Point",
-#                           "coordinates" : [57.047748, 9.926616] }
-#                       }
-#                   }
-#              })
-
-
-
-
 
 

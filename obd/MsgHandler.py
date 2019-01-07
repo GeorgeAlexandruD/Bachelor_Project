@@ -35,7 +35,7 @@ class MsgHandler:
         if message_type== 0x2003:
             msg = msgAlarm(buff)
             if msg.error_code != 0:
-                raise Exception('error code'+ msg.error_code)
+                raise Exception('error code '+ str(msg.error_code))
                 #todo log
             else:
                 res = msg.to_dict()

@@ -1,5 +1,6 @@
 from TypesParser import TypesParser
 from MessageValidator import MessageValidator
+import Logging as log
 
 
 class IncomingMsgFrame:
@@ -11,7 +12,7 @@ class IncomingMsgFrame:
         self.event_data=""
         self.event_response_code= 0x0000
 
-        self.error_code = self.preload(TypesParser, MessageValidator, IncomingMsgFrame.get_event_code)
+        self.error_code = self.preload(TypesParser, MessageValidator, IncomingMsgFrame.get_event_type)
 
 
     @staticmethod
@@ -21,15 +22,24 @@ class IncomingMsgFrame:
         packets = list()
 
         while True:
-            start = buff.find('\x40\x40', offset)  # Identify start of packet
+            try:
+                start = buff.find('\x40\x40', offset)
+            except Exception as e:
+                log.warn_logger(e)
+                return None
+              # Identify start of packet
             if start == -1:
                 return packets
             pack_l = typeParser.parse_u16(buff[start + 2: start + 4])
 
             if pack_l > len(buff):
                 return packets
-
-            end = buff.find('\x0d\x0a', offset + pack_l - 2)
+            try:
+                end = buff.find('\x0d\x0a', offset + pack_l - 2)
+            except Exception as e:
+                log.warn_logger(e)
+                return None
+            
 
             if start != -1 and end != -1:
                 packets.append((start, end + 2))
@@ -40,18 +50,23 @@ class IncomingMsgFrame:
 
     @staticmethod
     def get_unit_id(buff):
-        return str(buff[4: 16])
+        try:
+            return str(buff[4: 16])
+        except Exception as e:
+            log.warn_logger(e)
+            return None
+        
 
     @staticmethod
     def get_event_type(buff, typeParser):
-        return typeParser.parse_u16(buff[16:18])
-    
-    @staticmethod
-    def get_event_code(buff, typeParser):
-        return typeParser.parse_u16(buff[16:18])
+        try:
+            return typeParser.parse_u16(buff[16:18])
+        except Exception as e:
+            log.warn_logger(e)
+            return None
     
 
-    def preload(self, typeParser, mv, get_event_code):
+    def preload(self, typeParser, mv, get_event_type):
         
         package_length = typeParser.parse_u16(self.msg[2: 4])
 
@@ -64,7 +79,7 @@ class IncomingMsgFrame:
                 if mv.msg_len_is_good(len(self.msg), package_length):
 
                     self.unit_id = self.msg[4: 16]
-                    self.event_code = get_event_code(self.msg, typeParser)
+                    self.event_code = get_event_type(self.msg, typeParser)
                     self.event_data= self.msg[18: package_length - 4]
 
                     if not mv.msg_tail_is_good(self.msg[package_length-2: package_length]):

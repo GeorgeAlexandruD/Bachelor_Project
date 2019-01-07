@@ -3,26 +3,41 @@ from obd_tcp_server import Host
 import socket, time
 import os
 import threading
+from MsgHandler import MsgHandler
+import collections
+from obd_tcp_server import Client, Host
+from mock import Mock
+import socket
+import asyncore
 
-class TestStringMethods(unittest.TestCase):
-
-    def test_upper(self):
-        self.assertEqual('foo'.upper(), 'FOO')
-    def test_host(self):
-        TCP_IP = str(os.getenv('VCAP_APP_HOST', '127.0.0.1'))
-        TCP_PORT = int(os.getenv('VCAP_APP_PORT', '7777'))
-        host = Host((TCP_IP,TCP_PORT))
-        server_thread = threading.Thread(target=host.handle_accept)
-        server_thread.start()
-        time.sleep(0.01)
-        fake_client= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        fake_client.connect((TCP_IP,TCP_PORT))
         
-class TestObdtcp(unittest.TestCase):
+class TestObdtcpRead(unittest.TestCase):
+    def setUp(self):
+        self.valid_buff = bytearray.fromhex("404039003247512d313630313030383803201000010f0000002d0703110f1b390703110f1b030c549e3d0c2aec200200000000000034080d0a")
+        self.invalid_buff = bytearray.fromhex("404036")
+        self.msgHandler = MsgHandler()
+        self.valid_unit_id = "unknown"
+        self.valid_box = collections.deque()
+        
+        host = Mock()
+        socket = Mock()
+        addr = Mock()   
+        self.client = Client(host,socket, addr)
+
+    def tearDown(self):
+        self.client =None
+
     def test_reading_output(self):
-        self.assertEqual('foo'.upper(), 'FOO')
-    def test_reading_output(self):
-        self.assertEqual('foo'.upper(), 'FOO')
+        self.client.reading(self.valid_buff,self.valid_unit_id,self.msgHandler,self.valid_box)
+        self.assertGreater(len(self.valid_box),0)
+
+
+    def test_reading_invalid_buff(self):
+        self.client.reading(self.invalid_buff,self.valid_unit_id,self.msgHandler,self.valid_box)
+        self.assertEqual(len(self.valid_box),0)
+        
+       
+
     
 
 if __name__ == '__main__':

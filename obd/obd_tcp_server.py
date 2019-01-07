@@ -18,10 +18,10 @@ class Client(asyncore.dispatcher):
         asyncore.dispatcher.__init__(self, socket)
         self.host = host
         self.unit_id = "unknown"
-        
+        self.msgHandler= MsgHandler()
         self.outbox = collections.deque()
         self.last_write = time.time()
-        self.msgHandler= MsgHandler()
+        
 
     def handle_read(self):
         try:
@@ -31,20 +31,21 @@ class Client(asyncore.dispatcher):
         self.reading(buff, self.unit_id, self.msgHandler, self.outbox)
     #[]
     def reading(self, buff, unit_id, msgHandler,  outbox):
-        packets = msgHandler.lock_packet(buff, )
-        for (start, end) in packets:
-            if start>=0 and end >0:
-                if unit_id is "unknown":
-                    unit_id = msgHandler.get_unit_id(buff[start:end])
+        packets = msgHandler.lock_packet(buff)
+        if packets is not None:
+            for (start, end) in packets:
+                if start>=0 and end >0:
+                    if unit_id is "unknown":
+                        unit_id = msgHandler.get_unit_id(buff[start:end])
 
-                # todo: publish or not
-                msgType = msgHandler.get_event_type(buff[start:end])
+                    # todo: publish or not
+                    msgType = msgHandler.get_event_type(buff[start:end])
 
-                res = msgHandler.process(unit_id,buff[start:end], msgType, MsgAlarm)
+                    res = msgHandler.process(unit_id,buff[start:end], msgType, MsgAlarm)
 
-                if res is not None:
-                    outbox.append(res)
-        
+                    if res is not None:
+                        outbox.append(res)
+            
 
     def handle_write(self):
 

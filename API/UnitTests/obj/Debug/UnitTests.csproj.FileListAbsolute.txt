@@ -1,0 +1,10 @@
+C:\Users\George\Desktop\bachelor thesis\Bachelor_Project\API\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\George\Desktop\bachelor thesis\Bachelor_Project\API\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\George\Desktop\bachelor thesis\Bachelor_Project\API\UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\George\Desktop\bachelor thesis\Bachelor_Project\API\UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\George\Desktop\bachelor thesis\Bachelor_Project\API\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\George\Desktop\bachelor thesis\Bachelor_Project\API\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\George\Desktop\bachelor thesis\Bachelor_Project\API\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\George\Desktop\bachelor thesis\Bachelor_Project\API\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\George\Desktop\bachelor thesis\Bachelor_Project\API\UnitTests\bin\Debug\nunit.framework.pdb
+C:\Users\George\Desktop\bachelor thesis\Bachelor_Project\API\UnitTests\bin\Debug\nunit.framework.xml

@@ -22,20 +22,6 @@ class RabbitMQBinding:
         self.uplink_channel = self.channel
         self.uplink_channel.exchange_declare(exchange=self.exchange_uplink, exchange_type='topic')
 
-        # self.downlink_channel = self.channel
-        # self.downlink_channel.exchange_declare(exchange=self.exchange_downlink, exchange_type='topic' )
-
-        # queue_name = self.downlink_channel.queue_declare(queue=self.downlink_queue,
-        #                                                    exclusive=True, durable=True).method.queue
-        # self.downlink_channel.queue_bind(exchange=self.exchange_downlink,
-        #                                    queue=queue_name,
-        #                                    routing_key='#')
-        # self.downlink_channel.basic_consume(None,
-        #                                       queue=queue_name,
-        #                                       no_ack=False,
-        #                                       exclusive=True)
-
-
     def publish(self, topic, msg):
         self.connect()
         self.uplink_channel.basic_publish(exchange=self.exchange_uplink,

@@ -40,13 +40,14 @@ class MsgAlarm(IncomingMsgFrame):
     def to_dict(self):
         res = dict()
         res['packet_type'] = 'alarm'
-        res["timestamp"] = datetime.datetime.utcnow().isoformat()
+        res["timestamp"] = datetime.datetime.utcnow().isoformat()#device timestamp
         res["unit_id"] = str(self.unit_id)
         res["gps"] = self.alarm_location 
         res["tag"] = self.alarm_tag
         if self.alarm_no == 13:
             res["power_off"] = True
-
+        if self.alarm_no == 12:
+            res["power_on"] = True
         return res
 
     def generate_response(self, typeParser):

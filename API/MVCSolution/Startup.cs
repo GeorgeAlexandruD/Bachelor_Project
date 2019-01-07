@@ -12,8 +12,10 @@ using System.Net;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.AspNet.Identity;
 using System.Diagnostics;
-
-
+using MVCSolution.Models;
+using System;
+using MongoDB.Driver;
+using NLog;
 [assembly: OwinStartupAttribute(typeof(MVCSolution.Startup))]
 namespace MVCSolution
 {
@@ -41,25 +43,37 @@ namespace MVCSolution
         }
         private void Listener()
         {
-            var bus = RabbitHutch.CreateBus("host=localhost").Advanced;
+            var logger = LogManager.GetCurrentClassLogger();
+            ApplicationDbContext db = new ApplicationDbContext();
+            MongoClient mdb = new MongoClient();
+            CheckDB cdb = new CheckDB(db, mdb, logger);
+           
+            try
+            {
 
-            var queue = bus.QueueDeclare("try1");
-            var exchange = bus.ExchangeDeclare("data", ExchangeType.Topic,false, false,false, false, null, false);
-            var binding = bus.Bind(exchange, queue, "#");
+                var bus = RabbitHutch.CreateBus("host=localhost").Advanced;
 
-            bus.Consume(queue, (body, properties, info) => Task.Factory.StartNew(() =>
+                var queue = bus.QueueDeclare("data_queue");
+                var exchange = bus.ExchangeDeclare("data", ExchangeType.Topic, false, false, false, false, null, false);
+                var binding = bus.Bind(exchange, queue, "#");
 
-              {
-                  string message = Encoding.UTF8.GetString(body);
-                  dynamic json = JObject.Parse(message);
-                  if(json.packet_type=="alarm")
+                bus.Consume(queue, (body, properties, info) => Task.Factory.StartNew(() =>
+
                   {
-                      string id = json.unit_id;
-                      Debug.Write("abba"+ id);
-                      NewClass nc = new NewClass();
-                      nc.FunctionThatSolvesThings(id);
-                  }
-              }));
+                      string message = Encoding.UTF8.GetString(body);
+                      dynamic json = JObject.Parse(message);
+                      PacketHandler pd = new PacketHandler(cdb);
+                      
+                      if (json.packet_type == "alarm")
+                          pd.Alarm(json);
+                  }));
+
+            }
+            catch(Exception e)
+            {
+                logger.Error(e);
+            }
+           
         }       
     }
 }

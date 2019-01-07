@@ -19,12 +19,12 @@
             // Declare a proxy to reference the hub.
             var chat = $.connection.chatHub;
             // Create a function that the hub can call to broadcast messages.
-            chat.client.received = function (name, message) {
+            chat.client.send = function ( message) {
                 // Html encode display name and message.
-                var encodedName = $('<div />').text(name).html();
+              //  var encodedName = $('<div />').text(name).html();
                 var encodedMsg = $('<div />').text(message).html();
                 // Add the message to the page.
-                $('#discussion').append('<li><strong>' + encodedName
+                $('#discussion').append('<li><strong>' 
                     + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
             };
             // Get the user name and store it to prepend to messages.
